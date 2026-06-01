@@ -193,6 +193,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
+    // PROJECT MODAL (Private repo notification)
+    // ==========================================
+    const modal = document.getElementById('projectModal');
+    const modalClose = document.getElementById('modalClose');
+
+    document.querySelectorAll('.project-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const isGithub = this.querySelector('.fab.fa-github') !== null;
+            if (isGithub) {
+                e.preventDefault();
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+
+    modalClose.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // ==========================================
     // SMOOTH SCROLL
     // ==========================================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
