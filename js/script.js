@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // HERO NETFLIX-STYLE CAROUSEL
+    // HERO PARALLAX GRID
     // ==========================================
     (function() {
-        const carousel = document.getElementById('heroCarousel');
+        const container = document.getElementById('heroParallax');
         const images = [
             '2go-logistics.png', 'aiclipper.png', 'pjtravelntours.png',
             'youtubetoviral.png', 'filemanager.png', 'runapp.jpg',
@@ -44,20 +44,39 @@ document.addEventListener('DOMContentLoaded', () => {
             'gsms.png', 'generator.png', 'qrbase.png'
         ];
 
-        images.forEach((src, i) => {
+        const thumbs = [];
+        // Repeat images to fill grid
+        const pool = [...images, ...images, ...images];
+        pool.forEach((src, i) => {
             const div = document.createElement('div');
-            div.className = 'carousel-slide' + (i === 0 ? ' active' : '');
+            div.className = 'parallax-thumb';
             div.style.backgroundImage = `url('images/${src}')`;
-            carousel.appendChild(div);
+            div.dataset.speed = 0.03 + Math.random() * 0.07;
+            container.appendChild(div);
+            thumbs.push(div);
         });
 
-        let current = 0;
-        setInterval(() => {
-            const slides = carousel.children;
-            slides[current].classList.remove('active');
-            current = (current + 1) % slides.length;
-            slides[current].classList.add('active');
-        }, 4000);
+        // Mouse parallax
+        document.querySelector('.hero').addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top + rect.height / 2;
+            const mx = (e.clientX - cx) / rect.width;
+            const my = (e.clientY - cy) / rect.height;
+            thumbs.forEach(t => {
+                const s = parseFloat(t.dataset.speed);
+                t.style.transform = `translate(${mx * s * 80}px, ${my * s * 80}px)`;
+            });
+        });
+
+        // Scroll parallax
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero');
+            const rect = hero.getBoundingClientRect();
+            const progress = 1 - (rect.bottom / window.innerHeight);
+            const offset = Math.max(-10, Math.min(10, progress * 10 - 5));
+            container.style.transform = `translateY(${-10 + offset}%)`;
+        });
     })();
 
     // ==========================================
