@@ -76,6 +76,10 @@ section {
     transition: color 0.3s ease;
 }
 
+.skills .section-title {
+    color: #ffffff;
+}
+
 .section-title::after {
     content: '';
     position: absolute;
@@ -280,13 +284,13 @@ section {
     border-radius: 10px;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.25) saturate(0.5);
+    filter: brightness(0.75) saturate(0.5);
     flex-shrink: 0;
 }
 
 .gallery-thumb.app {
     width: 260px;
-    height: 380px;
+    height: 390px;
     border-radius: 14px;
 }
 
@@ -482,8 +486,33 @@ section {
    SKILLS SECTION
    ========================================== */
 .skills {
-    background: var(--bg-secondary);
-    transition: background-color 0.3s ease;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.skills::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 70%, rgba(255,255,255,0.03) 0%, transparent 50%);
+    animation: oceanFlow 12s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes oceanFlow {
+    0% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(2%, -1%) scale(1.02); }
+    50% { transform: translate(-1%, 2%) scale(0.98); }
+    75% { transform: translate(-2%, -1.5%) scale(1.01); }
+    100% { transform: translate(1%, 1%) scale(0.99); }
 }
 
 .skills-grid {
@@ -493,12 +522,19 @@ section {
 }
 
 .skill-card {
-    background: var(--bg-card);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
     padding: 40px;
     border-radius: 15px;
     text-align: center;
     box-shadow: var(--shadow);
     transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
 }
 
 .skill-card:hover {
@@ -515,11 +551,15 @@ section {
 .skill-card h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: var(--dark-color);
+    color: #ffffff;
 }
 
 .skill-card p {
-    color: var(--text-light);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.skill-icon {
+    color: #ffffff;
 }
 
 /* ==========================================
