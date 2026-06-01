@@ -33,23 +33,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // HERO GALLERY BACKGROUND
+    // HERO SCROLLING GALLERY
     // ==========================================
     (function() {
-        const container = document.getElementById('heroGallery');
-        const images = [
+        const appImages = [
             'aiclipper.png', 'youtubetoviral.png', 'cartoon_dev.png',
-            'qrfast.png', '2go-logistics.png', 'pjtravelntours.png',
-            'filemanager.png', 'runapp.jpg', 'wearhause.png',
-            'wresletech.png', 'schogms.png', 'gsms.png', 'generator.png', 'qrbase.png'
+            'qrfast.png', 'filemanager.png', 'runapp.jpg'
+        ];
+        const webImages = [
+            '2go-logistics.png', 'pjtravelntours.png', 'wearhause.png',
+            'wresletech.png', 'schogms.png', 'gsms.png',
+            'generator.png', 'qrbase.png'
         ];
 
-        images.slice(0, 9).forEach((src) => {
-            const div = document.createElement('div');
-            div.className = 'gallery-item';
-            div.style.backgroundImage = `url('images/${src}')`;
-            container.appendChild(div);
-        });
+        function buildTrack(containerId, images, cols) {
+            const side = document.getElementById(containerId);
+            for (let c = 0; c < cols; c++) {
+                const track = document.createElement('div');
+                track.className = 'gallery-track' + (c % 2 === 0 ? ' fast' : ' slower');
+                const pool = [...images];
+                // Shuffle for variety
+                pool.sort(() => Math.random() - 0.5);
+                const items = [...pool, ...pool];
+                items.forEach(src => {
+                    const div = document.createElement('div');
+                    div.className = 'gallery-thumb';
+                    div.style.backgroundImage = `url('images/${src}')`;
+                    track.appendChild(div);
+                });
+                side.appendChild(track);
+            }
+        }
+
+        buildTrack('galleryApp', appImages, 3);
+        buildTrack('galleryWeb', webImages, 3);
     })();
 
     // ==========================================
