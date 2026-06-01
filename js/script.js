@@ -38,13 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
     (function() {
         const container = document.getElementById('heroGallery');
         const images = [
-            '2go-logistics.png', 'aiclipper.png', 'pjtravelntours.png',
-            'youtubetoviral.png', 'filemanager.png', 'runapp.jpg',
-            'wearhause.png', 'wresletech.png', 'schogms.png',
-            'gsms.png', 'generator.png', 'qrbase.png'
+            'aiclipper.png', 'youtubetoviral.png', 'cartoon_dev.png',
+            '2go-logistics.png', 'pjtravelntours.png', 'filemanager.png',
+            'runapp.jpg', 'wearhause.png', 'wresletech.png',
+            'schogms.png', 'gsms.png', 'generator.png', 'qrbase.png'
         ];
 
-        // Use first 9 images for the 9-cell grid layout
         images.slice(0, 9).forEach((src) => {
             const div = document.createElement('div');
             div.className = 'gallery-item';
