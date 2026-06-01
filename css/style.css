@@ -250,14 +250,14 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    padding: 20px;
+    gap: 25px;
+    padding: 30px;
 }
 
 .gallery-track {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
     animation: scrollSmooth var(--speed, 30s) linear infinite;
     will-change: transform;
     flex: 0 0 auto;
@@ -265,11 +265,11 @@ section {
 }
 
 .gallery-track.fast {
-    --speed: 30s;
+    --speed: 85s;
 }
 
 .gallery-track.slower {
-    --speed: 50s;
+    --speed: 105s;
 }
 
 .gallery-thumb {
@@ -281,19 +281,19 @@ section {
 }
 
 .gallery-thumb.app {
-    width: 160px;
-    height: 245px;
+    width: 200px;
+    height: 300px;
     border-radius: 12px;
 }
 
 .gallery-thumb.web {
-    width: 230px;
-    height: 160px;
+    width: 280px;
+    height: 190px;
 }
 
 .gallery-thumb.ai {
-    width: 230px;
-    height: 160px;
+    width: 280px;
+    height: 190px;
 }
 
 @keyframes scrollSmooth {
