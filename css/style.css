@@ -265,11 +265,15 @@ section {
 }
 
 .gallery-track.fast {
-    --speed: 85s;
+    --speed: 50s;
 }
 
 .gallery-track.slower {
-    --speed: 105s;
+    --speed: 80s;
+}
+
+.gallery-track.slower {
+    --speed: 125s;
 }
 
 .gallery-thumb {
