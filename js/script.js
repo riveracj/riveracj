@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'web/generator.png', 'web/qrbase.png'
         ];
 
-        for (let c = 0; c < 5; c++) {
+        for (let c = 0; c < 3; c++) {
             const track = document.createElement('div');
             track.className = 'gallery-track' + (c % 2 === 0 ? ' fast' : ' slower');
             const rotated = [...allImages.slice(c), ...allImages.slice(0, c)];

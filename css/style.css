@@ -249,14 +249,14 @@ section {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    gap: 18px;
-    padding: 20px;
+    gap: 24px;
+    padding: 30px;
 }
 
 .gallery-track {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 24px;
     animation: scrollSmooth var(--speed, 30s) linear infinite;
     will-change: transform;
     flex: 0 0 auto;
@@ -271,12 +271,12 @@ section {
 }
 
 .gallery-thumb {
-    width: 160px;
-    height: 110px;
-    border-radius: 8px;
+    width: 200px;
+    height: 140px;
+    border-radius: 10px;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.22) saturate(0.45);
+    filter: brightness(0.25) saturate(0.5);
     flex-shrink: 0;
 }
 
