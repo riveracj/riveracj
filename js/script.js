@@ -111,11 +111,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const subtitleEl = document.getElementById('typed-text');
-    const originalText = "Full-Stack Developer | Flutter Specialist | Cross-Platform Expert";
+    const nameEl = document.getElementById('typed-name');
+    const nameCursor = document.getElementById('nameCursor');
+    const subtitleCursor = document.querySelector('.hero-subtitle .typed-cursor');
+    const subtitleText = "Full-Stack Developer | Flutter Specialist | Cross-Platform Expert";
+    const nameText = "Chrisvie John Rivera";
+
+    nameCursor.style.opacity = '0';
+    if (subtitleCursor) subtitleCursor.style.opacity = '0';
 
     setTimeout(() => {
-        typeWriter(subtitleEl, originalText, 50);
-    }, 1200);
+        nameCursor.style.opacity = '1';
+        typeWriter(nameEl, nameText, 80, () => {
+            nameCursor.style.opacity = '0';
+            setTimeout(() => {
+                if (subtitleCursor) subtitleCursor.style.opacity = '1';
+                typeWriter(subtitleEl, subtitleText, 50);
+            }, 400);
+        });
+    }, 800);
 
     // ==========================================
     // PARTICLES
