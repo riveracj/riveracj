@@ -249,6 +249,7 @@ section {
     overflow: hidden;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
     padding: 20px;
 }
@@ -260,6 +261,7 @@ section {
     animation: scrollSmooth var(--speed, 30s) linear infinite;
     will-change: transform;
     flex: 0 0 auto;
+    align-items: center;
 }
 
 .gallery-track.fast {
@@ -276,24 +278,22 @@ section {
     background-position: center;
     filter: brightness(0.25) saturate(0.5);
     flex-shrink: 0;
-    width: 200px;
-    height: 140px;
 }
 
 .gallery-thumb.app {
     width: 160px;
-    height: 220px;
+    height: 245px;
     border-radius: 12px;
 }
 
 .gallery-thumb.web {
-    width: 240px;
-    height: 150px;
+    width: 230px;
+    height: 160px;
 }
 
 .gallery-thumb.ai {
-    width: 200px;
-    height: 150px;
+    width: 230px;
+    height: 160px;
 }
 
 @keyframes scrollSmooth {
