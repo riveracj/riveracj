@@ -8,18 +8,32 @@
         content="Chrisvie John Rivera - Full-Stack Developer specializing in Flutter, PHP, and Cross-Platform Development">
     <title>Chrisvie John Rivera | Full-Stack Developer</title>
     <link rel="icon" href="images/CloudHostLogo.png">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <p class="loader-text">Loading</p>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="logo">
                 <a href="#home">CJ Rivera</a>
-                <!-- <img src="images/CloudHostLogo.png" height="55" width="110" alt="CloudHostLogo" /> -->
+                <!-- <img loading="lazy" src="images/CloudHostLogo.png" height="55" width="110" alt="CloudHostLogo" /> -->
             </div>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -70,7 +84,7 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="images/profile.png" alt="Profile Picture"
+                    <img loading="lazy" src="images/profile.png" alt="Profile Picture"
                         onerror="this.src='https://via.placeholder.com/400x400?text=Your+Photo'">
                 </div>
                 <div class="about-text">
@@ -166,7 +180,7 @@
             <div class="projects-grid">
                 <div class="project-card" data-category="ai">
                     <div class="project-image">
-                        <img src="images/ai/youtubetoviral.png" alt="ClipForge AI"
+                        <img loading="lazy" src="images/ai/youtubetoviral.png" alt="ClipForge AI"
                             onerror="this.src='https://via.placeholder.com/600x400?text=ClipForge+AI'">
                         <div class="project-overlay">
                             <a href="#" class="project-link" data-type="private"><i class="fab fa-github"></i></a>
@@ -184,7 +198,7 @@
                 </div>
                 <div class="project-card" data-category="ai">
                     <div class="project-image">
-                        <img src="images/ai/aiclipper.png" alt="AIClipper"
+                        <img loading="lazy" src="images/ai/aiclipper.png" alt="AIClipper"
                             onerror="this.src='https://via.placeholder.com/600x400?text=AIClipper'">
                         <div class="project-overlay">
                             <a href="#" class="project-link" data-type="private"><i class="fab fa-github"></i></a>
@@ -202,7 +216,7 @@
                 </div>
                 <div class="project-card" data-category="app">
                     <div class="project-image">
-                        <img src="images/app/cartoon_dev.png" alt="Cartoon Dev"
+                        <img loading="lazy" src="images/app/cartoon_dev.png" alt="Cartoon Dev"
                             onerror="this.src='https://via.placeholder.com/600x400?text=Cartoon+Dev'">
                         <div class="project-overlay">
                             <a href="#" class="project-link" data-type="private"><i class="fab fa-github"></i></a>
@@ -218,9 +232,27 @@
                         </div>
                     </div>
                 </div>
+                <div class="project-card" data-category="app">
+                    <div class="project-image">
+                        <img loading="lazy" src="images/app/doxie.png" alt="Doxie"
+                            onerror="this.src='https://via.placeholder.com/600x400?text=Doxie'">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" data-type="private"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Doxie</h3>
+                        <p>A course marketplace with battle-tested documentation, SaaS tools, and e-commerce features. Unlock premium learning content and build real-world skills.</p>
+                        <div class="project-tags">
+                            <span>Flutter</span>
+                            <span>E-Commerce</span>
+                            <span>Course Platform</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card" data-category="ai">
                     <div class="project-image">
-                        <img src="images/ai/webforgeai.png" alt="WebForge AI"
+                        <img loading="lazy" src="images/ai/webforgeai.png" alt="WebForge AI"
                             onerror="this.src='https://via.placeholder.com/600x400?text=WebForge+AI'">
                         <div class="project-overlay">
                             <a href="#" class="project-link" data-type="private"><i class="fab fa-github"></i></a>
@@ -238,7 +270,7 @@
                 </div>
                 <div class="project-card" data-category="app">
                     <div class="project-image">
-                        <img src="images/app/qrfast.png" alt="QRFast"
+                        <img loading="lazy" src="images/app/qrfast.png" alt="QRFast"
                             onerror="this.src='https://via.placeholder.com/600x400?text=QRFast'">
                         <div class="project-overlay">
                             <a href="#" class="project-link" data-type="private"><i class="fab fa-github"></i></a>
@@ -256,7 +288,7 @@
                 </div>
                 <div class="project-card" data-category="web">
                     <div class="project-image">
-                        <img src="images/web/2go-logistics.png" alt="2GO Logistics"
+                        <img loading="lazy" src="images/web/2go-logistics.png" alt="2GO Logistics"
                             onerror="this.src='https://via.placeholder.com/600x400?text=2GO+Logistics'">
                         <div class="project-overlay">
                             <a href="https://2go-marbel.cloudhost.host/" target="_blank" class="project-link"><i
@@ -275,7 +307,7 @@
                 </div>
                 <div class="project-card" data-category="app">
                     <div class="project-image">
-                        <img src="images/web/pjtravelntours.png" alt="PJ Travelntour"
+                        <img loading="lazy" src="images/web/pjtravelntours.png" alt="PJ Travelntour"
                             onerror="this.src='https://via.placeholder.com/600x400?text=PJ+Travelntour'">
                         <div class="project-overlay">
                             <a href="https://pjtravelandtours.cloudhost.host/" target="_blank" class="project-link"><i
@@ -294,7 +326,7 @@
                 </div>
                 <div class="project-card" data-category="web">
                     <div class="project-image">
-                        <img src="images/web/donaterecoletos.png" alt="Donate Recoletos"
+                        <img loading="lazy" src="images/web/donaterecoletos.png" alt="Donate Recoletos"
                             onerror="this.src='https://via.placeholder.com/600x400?text=Donate+Recoletos'">
                         <div class="project-overlay">
                             <a href="https://donaterecoletos.com/" target="_blank" class="project-link"><i
@@ -313,7 +345,7 @@
                 </div>
                 <div class="project-card" data-category="web">
                     <div class="project-image">
-                        <img src="images/web/wearhause.png" alt="Wearhaus E-Commerce"
+                        <img loading="lazy" src="images/web/wearhause.png" alt="Wearhaus E-Commerce"
                             onerror="this.src='https://via.placeholder.com/600x400?text=Wearhaus+Ecommerce'">
                         <div class="project-overlay">
                             <a href="https://wearhaus.cloudhost.host/" target="_blank" class="project-link"><i
@@ -332,7 +364,7 @@
                 </div>
                 <div class="project-card" data-category="web">
                     <div class="project-image">
-                        <img src="images/web/wresletech.png" alt="WrestleTech Philippines"
+                        <img loading="lazy" src="images/web/wresletech.png" alt="WrestleTech Philippines"
                             onerror="this.src='https://via.placeholder.com/600x400?text=WrestleTech'">
                         <div class="project-overlay">
                             <a href="https://wrestletech.cloudhost.host/wrestletech-ph/" target="_blank"
@@ -352,7 +384,7 @@
                 </div>
                 <div class="project-card" data-category="app">
                     <div class="project-image">
-                        <img src="images/app/filemanager.png" alt="Flutter File Manager Pro"
+                        <img loading="lazy" src="images/app/filemanager.png" alt="Flutter File Manager Pro"
                             onerror="this.src='https://via.placeholder.com/600x400?text=Flutter+File+Manager'">
                         <div class="project-overlay">
                             <a href="https://github.com/riveracj/file_manager" target="_blank" class="project-link" data-type="public"><i
@@ -372,7 +404,7 @@
                 </div>
                 <div class="project-card" data-category="app">
                     <div class="project-image">
-                        <img src="images/app/runapp.jpg" alt="Run App"
+                        <img loading="lazy" src="images/app/runapp.jpg" alt="Run App"
                             onerror="this.src='https://via.placeholder.com/600x400?text=Run+App'">
                         <div class="project-overlay">
                             <a href="https://github.com/riveracj/run_activity" target="_blank" class="project-link" data-type="public"><i

@@ -340,3 +340,16 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Portfolio loaded successfully! 🚀');
 
 });
+
+// ==========================================
+// PRELOADER
+// ==========================================
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('loaded');
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 700);
+    }
+});
