@@ -249,14 +249,14 @@ section {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    gap: 24px;
-    padding: 30px;
+    gap: 20px;
+    padding: 20px;
 }
 
 .gallery-track {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
     animation: scrollSmooth var(--speed, 30s) linear infinite;
     will-change: transform;
     flex: 0 0 auto;
@@ -271,13 +271,29 @@ section {
 }
 
 .gallery-thumb {
-    width: 200px;
-    height: 140px;
     border-radius: 10px;
     background-size: cover;
     background-position: center;
     filter: brightness(0.25) saturate(0.5);
     flex-shrink: 0;
+    width: 200px;
+    height: 140px;
+}
+
+.gallery-thumb.app {
+    width: 160px;
+    height: 220px;
+    border-radius: 12px;
+}
+
+.gallery-thumb.web {
+    width: 240px;
+    height: 150px;
+}
+
+.gallery-thumb.ai {
+    width: 200px;
+    height: 150px;
 }
 
 @keyframes scrollSmooth {

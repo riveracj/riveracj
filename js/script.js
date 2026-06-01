@@ -38,11 +38,20 @@ document.addEventListener('DOMContentLoaded', () => {
     (function() {
         const container = document.getElementById('heroGallery');
         const allImages = [
-            'ai/aiclipper.png', 'ai/youtubetoviral.png', 'ai/cartoon_dev.png',
-            'app/qrfast.png', 'app/filemanager.png', 'app/runapp.jpg', 'app/pjtravelntours.png',
-            'web/2go-logistics.png', 'web/wearhause.png', 'web/wresletech.png',
-            'web/schogms.png', 'web/gsms.png',
-            'web/generator.png', 'web/qrbase.png'
+            { src: 'ai/aiclipper.png', cat: 'ai' },
+            { src: 'ai/youtubetoviral.png', cat: 'ai' },
+            { src: 'ai/cartoon_dev.png', cat: 'ai' },
+            { src: 'app/qrfast.png', cat: 'app' },
+            { src: 'app/filemanager.png', cat: 'app' },
+            { src: 'app/runapp.jpg', cat: 'app' },
+            { src: 'app/pjtravelntours.png', cat: 'app' },
+            { src: 'web/2go-logistics.png', cat: 'web' },
+            { src: 'web/wearhause.png', cat: 'web' },
+            { src: 'web/wresletech.png', cat: 'web' },
+            { src: 'web/schogms.png', cat: 'web' },
+            { src: 'web/gsms.png', cat: 'web' },
+            { src: 'web/generator.png', cat: 'web' },
+            { src: 'web/qrbase.png', cat: 'web' }
         ];
 
         for (let c = 0; c < 3; c++) {
@@ -50,10 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
             track.className = 'gallery-track' + (c % 2 === 0 ? ' fast' : ' slower');
             const rotated = [...allImages.slice(c), ...allImages.slice(0, c)];
             const items = [...rotated, ...rotated];
-            items.forEach(src => {
+            items.forEach(img => {
                 const div = document.createElement('div');
-                div.className = 'gallery-thumb';
-                div.style.backgroundImage = `url('images/${src}')`;
+                div.className = 'gallery-thumb ' + img.cat;
+                div.style.backgroundImage = `url('images/${img.src}')`;
                 track.appendChild(div);
             });
             container.appendChild(track);
