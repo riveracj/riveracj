@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { src: 'ai/aiclipper.png', cat: 'ai' },
             { src: 'ai/youtubetoviral.png', cat: 'ai' },
             { src: 'ai/cartoon_dev.png', cat: 'ai' },
+            { src: 'ai/aiclipper.png', cat: 'ai' },
+            { src: 'ai/youtubetoviral.png', cat: 'ai' },
             { src: 'app/qrfast.png', cat: 'app' },
             { src: 'app/filemanager.png', cat: 'app' },
             { src: 'app/runapp.jpg', cat: 'app' },
