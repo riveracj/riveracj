@@ -38,11 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
     (function() {
         const container = document.getElementById('heroGallery');
         const allImages = [
-            'aiclipper.png', 'youtubetoviral.png', 'cartoon_dev.png',
-            'qrfast.png', 'filemanager.png', 'runapp.jpg',
-            '2go-logistics.png', 'pjtravelntours.png', 'wearhause.png',
-            'wresletech.png', 'schogms.png', 'gsms.png',
-            'generator.png', 'qrbase.png'
+            'ai/aiclipper.png', 'ai/youtubetoviral.png', 'ai/cartoon_dev.png',
+            'app/qrfast.png', 'app/filemanager.png', 'app/runapp.jpg', 'app/pjtravelntours.png',
+            'web/2go-logistics.png', 'web/wearhause.png', 'web/wresletech.png',
+            'web/schogms.png', 'web/gsms.png',
+            'web/generator.png', 'web/qrbase.png'
         ];
 
         for (let c = 0; c < 5; c++) {
