@@ -46,15 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
             'generator.png', 'qrbase.png'
         ];
 
-        function buildTrack(containerId, images, cols) {
-            const side = document.getElementById(containerId);
+        function buildTrack(sideId, images, cols) {
+            const side = document.getElementById(sideId);
             for (let c = 0; c < cols; c++) {
                 const track = document.createElement('div');
                 track.className = 'gallery-track' + (c % 2 === 0 ? ' fast' : ' slower');
-                const pool = [...images];
-                // Shuffle for variety
-                pool.sort(() => Math.random() - 0.5);
-                const items = [...pool, ...pool];
+                const rotated = [...images.slice(c), ...images.slice(0, c)];
+                const items = [...rotated, ...rotated];
                 items.forEach(src => {
                     const div = document.createElement('div');
                     div.className = 'gallery-thumb';
