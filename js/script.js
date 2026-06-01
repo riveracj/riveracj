@@ -41,13 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
             { src: 'ai/aiclipper.png', cat: 'ai' },
             { src: 'ai/youtubetoviral.png', cat: 'ai' },
             { src: 'app/cartoon_dev.png', cat: 'app' },
+            { src: 'app/pjtravelntours.png', cat: 'app' },
             { src: 'ai/webforgeai.png', cat: 'ai' },
             { src: 'ai/aiclipper.png', cat: 'ai' },
             { src: 'ai/youtubetoviral.png', cat: 'ai' },
             { src: 'app/qrfast.png', cat: 'app' },
             { src: 'app/filemanager.png', cat: 'app' },
             { src: 'app/runapp.jpg', cat: 'app' },
-            { src: 'web/pjtravelntours.png', cat: 'web' },
             { src: 'web/2go-logistics.png', cat: 'web' },
             { src: 'web/wearhause.png', cat: 'web' },
             { src: 'web/wresletech.png', cat: 'web' },
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameEl = document.getElementById('typed-name');
     const nameCursor = document.getElementById('nameCursor');
     const subtitleCursor = document.querySelector('.hero-subtitle .typed-cursor');
-    const subtitleText = "Full-Stack Developer | Flutter Specialist | Cross-Platform Expert";
+    const subtitleText = "Full-Stack Developer | Flutter Developer | Web Developer";
     const nameText = "Chrisvie John Rivera";
 
     nameCursor.style.opacity = '0';
@@ -279,6 +279,44 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove('active');
             document.body.style.overflow = '';
         }
+    });
+
+    // ==========================================
+    // PROJECT TABS (Filter)
+    // ==========================================
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+
+            projectCards.forEach(card => {
+                const match = filter === 'all' || card.dataset.category === filter;
+                if (!match) {
+                    card.classList.remove('filter-enter');
+                    card.classList.add('filter-hidden');
+                    card.style.display = 'none';
+                }
+            });
+
+            requestAnimationFrame(() => {
+                let delay = 0;
+                projectCards.forEach(card => {
+                    const match = filter === 'all' || card.dataset.category === filter;
+                    if (match) {
+                        card.style.display = '';
+                        card.classList.remove('filter-hidden', 'filter-enter');
+                        void card.offsetWidth;
+                        card.style.animationDelay = `${delay}s`;
+                        card.classList.add('filter-enter');
+                        delay += 0.08;
+                    }
+                });
+            });
+        });
     });
 
     // ==========================================

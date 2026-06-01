@@ -283,15 +283,11 @@ section {
 }
 
 .gallery-track.fast {
+    --speed: 120s;
+}
+
+.gallery-track.slower {
     --speed: 180s;
-}
-
-.gallery-track.slower {
-    --speed: 240s;
-}
-
-.gallery-track.slower {
-    --speed: 125s;
 }
 
 .gallery-thumb {
@@ -339,6 +335,7 @@ section {
     color: white;
     z-index: 1;
     position: relative;
+    margin-top: 60px;
 }
 
 .hero h1 {
@@ -356,7 +353,8 @@ section {
 
 .name-btn {
     display: inline-block;
-    padding: 6px 20px;
+    padding: 3px 3px;
+    vertical-align: middle;
     background: linear-gradient(135deg, rgba(240, 147, 251, 0.15), rgba(245, 87, 108, 0.15));
     border: 1.5px solid rgba(240, 147, 251, 0.4);
     border-radius: 50px;
@@ -634,6 +632,37 @@ section {
     transition: background-color 0.3s ease;
 }
 
+.project-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 10px 28px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--text-primary);
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.tab-btn.active {
+    background: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -645,7 +674,28 @@ section {
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    transition: var(--transition);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-card.filter-hidden {
+    opacity: 0;
+    transform: scale(0.85);
+    pointer-events: none;
+}
+
+.project-card.filter-enter {
+    animation: cardEnter 0.5s ease both;
+}
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .project-card:hover {
@@ -854,8 +904,8 @@ section {
    FOOTER
    ========================================== */
 .footer {
-    background: var(--dark-color);
-    color: white;
+    background: #0f172a;
+    color: #e2e8f0;
     padding: 30px 0;
 }
 

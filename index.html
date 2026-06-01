@@ -157,8 +157,14 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
+            <div class="project-tabs">
+                <button class="tab-btn active" data-filter="all">All</button>
+                <button class="tab-btn" data-filter="web">Web</button>
+                <button class="tab-btn" data-filter="app">App</button>
+                <button class="tab-btn" data-filter="ai">AI</button>
+            </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-category="ai">
                     <div class="project-image">
                         <img src="images/ai/youtubetoviral.png" alt="ClipForge AI"
                             onerror="this.src='https://via.placeholder.com/600x400?text=ClipForge+AI'">
@@ -176,7 +182,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="ai">
                     <div class="project-image">
                         <img src="images/ai/aiclipper.png" alt="AIClipper"
                             onerror="this.src='https://via.placeholder.com/600x400?text=AIClipper'">
@@ -194,7 +200,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="app">
                     <div class="project-image">
                         <img src="images/app/cartoon_dev.png" alt="Cartoon Dev"
                             onerror="this.src='https://via.placeholder.com/600x400?text=Cartoon+Dev'">
@@ -212,7 +218,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="ai">
                     <div class="project-image">
                         <img src="images/ai/webforgeai.png" alt="WebForge AI"
                             onerror="this.src='https://via.placeholder.com/600x400?text=WebForge+AI'">
@@ -230,7 +236,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="app">
                     <div class="project-image">
                         <img src="images/app/qrfast.png" alt="QRFast"
                             onerror="this.src='https://via.placeholder.com/600x400?text=QRFast'">
@@ -248,7 +254,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="web">
                     <div class="project-image">
                         <img src="images/web/2go-logistics.png" alt="2GO Logistics"
                             onerror="this.src='https://via.placeholder.com/600x400?text=2GO+Logistics'">
@@ -267,7 +273,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="app">
                     <div class="project-image">
                         <img src="images/web/pjtravelntours.png" alt="PJ Travelntour"
                             onerror="this.src='https://via.placeholder.com/600x400?text=PJ+Travelntour'">
@@ -286,7 +292,26 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="images/web/donaterecoletos.png" alt="Donate Recoletos"
+                            onerror="this.src='https://via.placeholder.com/600x400?text=Donate+Recoletos'">
+                        <div class="project-overlay">
+                            <a href="https://donaterecoletos.com/" target="_blank" class="project-link"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Donate Recoletos</h3>
+                        <p>Support our mission to preserve heritage, build communities, and transform lives — a donation platform for Recoletos initiatives.</p>
+                        <div class="project-tags">
+                            <span>Web</span>
+                            <span>Donation</span>
+                            <span>PHP</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="web">
                     <div class="project-image">
                         <img src="images/web/wearhause.png" alt="Wearhaus E-Commerce"
                             onerror="this.src='https://via.placeholder.com/600x400?text=Wearhaus+Ecommerce'">
@@ -305,7 +330,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="web">
                     <div class="project-image">
                         <img src="images/web/wresletech.png" alt="WrestleTech Philippines"
                             onerror="this.src='https://via.placeholder.com/600x400?text=WrestleTech'">
@@ -325,7 +350,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="app">
                     <div class="project-image">
                         <img src="images/app/filemanager.png" alt="Flutter File Manager Pro"
                             onerror="this.src='https://via.placeholder.com/600x400?text=Flutter+File+Manager'">
@@ -345,7 +370,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-category="app">
                     <div class="project-image">
                         <img src="images/app/runapp.jpg" alt="Run App"
                             onerror="this.src='https://via.placeholder.com/600x400?text=Run+App'">
