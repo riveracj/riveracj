@@ -86,10 +86,24 @@ section {
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    border-radius: 2px;
+    width: 100px;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+    background-size: 200% 100%;
+    border-radius: 3px;
+    animation: waveLine 3s ease-in-out infinite;
+}
+
+@keyframes waveLine {
+    0%, 100% { background-position: 0% 50%; width: 100px; border-radius: 3px; }
+    25% { width: 120px; border-radius: 8px; height: 5px; }
+    50% { background-position: 100% 50%; width: 100px; border-radius: 3px; height: 6px; }
+    75% { width: 120px; border-radius: 8px; height: 5px; }
+}
+
+.skills .section-title::after {
+    background: linear-gradient(90deg, rgba(255,255,255,0.8), #ffffff, rgba(255,255,255,0.8));
+    background-size: 200% 100%;
 }
 
 /* ==========================================
@@ -295,7 +309,7 @@ section {
 }
 
 .gallery-thumb.web {
-    width: 340px;
+    width: 360px;
     height: 230px;
 }
 
