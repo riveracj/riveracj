@@ -33,38 +33,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // HERO VERTICAL SCROLL STRIP
+    // HERO NETFLIX-STYLE CAROUSEL
     // ==========================================
     (function() {
-        const strip = document.getElementById('heroScrollStrip');
+        const carousel = document.getElementById('heroCarousel');
         const images = [
             '2go-logistics.png', 'aiclipper.png', 'pjtravelntours.png',
             'youtubetoviral.png', 'filemanager.png', 'runapp.jpg',
             'wearhause.png', 'wresletech.png', 'schogms.png',
             'gsms.png', 'generator.png', 'qrbase.png'
         ];
-        const cols = 4;
-        const itemsPerCol = 6;
 
-        for (let c = 0; c < cols; c++) {
-            const col = document.createElement('div');
-            col.className = 'scroll-column' + (c % 2 === 0 ? '' : ' reverse');
-            col.style.setProperty('--duration', `${18 + c * 3}s`);
-            const pool = images.slice(c * 3, c * 3 + 4).concat(images.slice(0, 2));
-            const items = [];
-            for (let i = 0; i < itemsPerCol; i++) {
-                items.push(pool[i % pool.length]);
-            }
-            items.forEach(src => {
-                const div = document.createElement('div');
-                div.className = 'scroll-thumb';
-                div.style.backgroundImage = `url('images/${src}')`;
-                col.appendChild(div);
-            });
-            const clone = col.cloneNode(true);
-            col.appendChild(clone);
-            strip.appendChild(col);
-        }
+        images.forEach((src, i) => {
+            const div = document.createElement('div');
+            div.className = 'carousel-slide' + (i === 0 ? ' active' : '');
+            div.style.backgroundImage = `url('images/${src}')`;
+            carousel.appendChild(div);
+        });
+
+        let current = 0;
+        setInterval(() => {
+            const slides = carousel.children;
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }, 4000);
     })();
 
     // ==========================================
