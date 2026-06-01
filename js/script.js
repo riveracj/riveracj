@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById('heroGallery');
         const images = [
             'aiclipper.png', 'youtubetoviral.png', 'cartoon_dev.png',
-            '2go-logistics.png', 'pjtravelntours.png', 'filemanager.png',
-            'runapp.jpg', 'wearhause.png', 'wresletech.png',
-            'schogms.png', 'gsms.png', 'generator.png', 'qrbase.png'
+            'qrfast.png', '2go-logistics.png', 'pjtravelntours.png',
+            'filemanager.png', 'runapp.jpg', 'wearhause.png',
+            'wresletech.png', 'schogms.png', 'gsms.png', 'generator.png', 'qrbase.png'
         ];
 
         images.slice(0, 9).forEach((src) => {
