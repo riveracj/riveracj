@@ -228,8 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.project-link').forEach(link => {
         link.addEventListener('click', function(e) {
-            const isGithub = this.querySelector('.fab.fa-github') !== null;
-            if (isGithub) {
+            if (this.dataset.type === 'private') {
                 e.preventDefault();
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
