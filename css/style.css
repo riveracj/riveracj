@@ -248,42 +248,35 @@ section {
     z-index: 0;
     overflow: hidden;
     display: flex;
-}
-
-.gallery-side {
-    flex: 1;
-    display: flex;
-    gap: 15px;
-    padding: 15px;
-    overflow: hidden;
-    position: relative;
     justify-content: center;
+    gap: 18px;
+    padding: 20px;
 }
 
 .gallery-track {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 18px;
     animation: scrollSmooth var(--speed, 30s) linear infinite;
     will-change: transform;
     flex: 0 0 auto;
 }
 
-.gallery-track.slower {
-    --speed: 40s;
+.gallery-track.fast {
+    --speed: 18s;
 }
 
-.gallery-track.fast {
-    --speed: 20s;
+.gallery-track.slower {
+    --speed: 35s;
 }
 
 .gallery-thumb {
-    width: 150px;
-    height: 100px;
+    width: 160px;
+    height: 110px;
     border-radius: 8px;
     background-size: cover;
     background-position: center;
-    filter: brightness(0.25) saturate(0.5);
+    filter: brightness(0.22) saturate(0.45);
     flex-shrink: 0;
 }
 
