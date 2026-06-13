@@ -32,45 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ==========================================
-    // HERO SCROLLING GALLERY
-    // ==========================================
-    (function() {
-        const container = document.getElementById('heroGallery');
-        const allImages = [
-            { src: 'ai/aiclipper.png', cat: 'ai' },
-            { src: 'ai/youtubetoviral.png', cat: 'ai' },
-            { src: 'app/cartoon_dev.png', cat: 'app' },
-            { src: 'app/pjtravelntours.png', cat: 'app' },
-            { src: 'ai/webforgeai.png', cat: 'ai' },
-            { src: 'ai/aiclipper.png', cat: 'ai' },
-            { src: 'ai/youtubetoviral.png', cat: 'ai' },
-            { src: 'app/qrfast.png', cat: 'app' },
-            { src: 'app/filemanager.png', cat: 'app' },
-            { src: 'app/runapp.jpg', cat: 'app' },
-            { src: 'web/2go-logistics.png', cat: 'web' },
-            { src: 'web/wearhause.png', cat: 'web' },
-            { src: 'web/wresletech.png', cat: 'web' },
-            { src: 'web/schogms.png', cat: 'web' },
-            { src: 'web/gsms.png', cat: 'web' },
-            { src: 'web/generator.png', cat: 'web' },
-            { src: 'web/qrbase.png', cat: 'web' }
-        ];
 
-        for (let c = 0; c < 3; c++) {
-            const track = document.createElement('div');
-            track.className = 'gallery-track' + (c % 2 === 0 ? ' fast' : ' slower');
-            const rotated = [...allImages.slice(c), ...allImages.slice(0, c)];
-            const items = [...rotated, ...rotated];
-            items.forEach(img => {
-                const div = document.createElement('div');
-                div.className = 'gallery-thumb ' + img.cat;
-                div.style.backgroundImage = `url('images/${img.src}')`;
-                track.appendChild(div);
-            });
-            container.appendChild(track);
-        }
-    })();
 
     // ==========================================
     // THEME TOGGLE
@@ -136,16 +98,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     function createParticles() {
         const hero = document.querySelector('.hero');
-        const particleCount = 40;
-        for (let i = 0; i < particleCount; i++) {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const color = isDark ? 'rgba(255,255,255,0.4)' : 'rgba(5,0,64,0.08)';
+        for (let i = 0; i < 30; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
             Object.assign(particle.style, {
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
-                animation: `float ${5 + Math.random() * 10}s ${Math.random() * 5}s infinite`,
-                width: `${2 + Math.random() * 4}px`,
-                height: `${2 + Math.random() * 4}px`
+                animation: `float ${6 + Math.random() * 8}s ${Math.random() * 4}s infinite`,
+                width: `${2 + Math.random() * 3}px`,
+                height: `${2 + Math.random() * 3}px`,
+                background: color
             });
             hero.appendChild(particle);
         }
@@ -181,21 +145,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // NAVBAR SCROLL + ACTIVE LINK
+    // SCROLL PROGRESS + ACTIVE LINK
     // ==========================================
+    const scrollProgress = document.getElementById('scrollProgress');
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.2)';
-        } else {
-            navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-        }
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        scrollProgress.style.width = progress + '%';
+
+        navbar.style.borderBottom = scrollTop > 50 ? '1px solid var(--border-color)' : '1px solid transparent';
 
         let current = '';
         const sections = document.querySelectorAll('section');
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            if (window.scrollY >= (sectionTop - 200)) {
+            if (scrollTop >= (sectionTop - 200)) {
                 current = section.getAttribute('id');
             }
         });
@@ -239,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.skill-card, .project-card, .about-content, .contact-content, .about-stats, .contact-details').forEach(el => {
+    document.querySelectorAll('.project-card, .about-content, .contact-content, .about-stats, .contact-details').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -279,6 +246,23 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove('active');
             document.body.style.overflow = '';
         }
+    });
+
+    // ==========================================
+    // S-ROADMAP SCROLL REVEAL
+    // ==========================================
+    const sObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                sObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.s-item').forEach((el, i) => {
+        el.style.transitionDelay = (i * 0.18) + 's';
+        sObserver.observe(el);
     });
 
     // ==========================================

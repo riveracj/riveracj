@@ -11,8 +11,6 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
@@ -32,7 +30,6 @@
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="scroll-progress" id="scrollProgress"></div>
         <div class="container">
             <div class="logo">
                 <a href="#home">CJ Rivera</a>
@@ -60,16 +57,14 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-bg-grid"></div>
-        <div class="hero-ambient"></div>
-        <div class="hero-ambient-center"></div>
+        <div class="hero-gallery" id="heroGallery"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="animate-fade-in">Hello, I'm <span class="name-pill" id="nameBtn"><span id="typed-name"></span><span class="typed-cursor" id="nameCursor">|</span></span></h1>
+                <h1 class="animate-fade-in">Hello, I'm <span class="name-btn" id="nameBtn"><span id="typed-name"></span><span class="typed-cursor" id="nameCursor">|</span></span></h1>
                 <p class="hero-subtitle animate-fade-in-delay"><span id="typed-text"></span><span class="typed-cursor">|</span></p>
                 <div class="hero-buttons animate-fade-in-delay-2">
-                    <a href="#projects" class="btn-hero btn-hero-primary">View My Work</a>
-                    <a href="#contact" class="btn-hero btn-hero-secondary">Get In Touch</a>
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
                 <div class="social-links animate-fade-in-delay-3">
                     <a href="https://github.com/riveracj" target="_blank"><i class="fab fa-github"></i></a>
@@ -125,90 +120,48 @@
     <section id="skills" class="skills">
         <div class="container">
             <h2 class="section-title">My Skills</h2>
-            <div class="s-roadmap">
-                <svg class="s-curve" viewBox="0 0 200 900" preserveAspectRatio="none">
-                    <path d="M 100 0 C 100 40, 175 60, 175 120 C 175 180, 25 210, 25 270 C 25 330, 175 360, 175 420 C 175 480, 25 510, 25 570 C 25 630, 175 660, 175 720 C 175 780, 100 810, 100 860" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" opacity="0.4"/>
-                </svg>
-                <div class="s-item s-left">
-                    <div class="s-dot"></div>
-                    <div class="s-card">
-                        <div class="s-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <h3>Mobile Development</h3>
-                        <div class="s-pills">
-                            <span class="s-pill">Flutter</span>
-                            <span class="s-pill">iOS</span>
-                            <span class="s-pill">Android</span>
-                            <span class="s-pill">Desktop</span>
-                        </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
                     </div>
+                    <h3>Mobile Development</h3>
+                    <p>Flutter (iOS, Android, Web, Desktop)</p>
                 </div>
-                <div class="s-item s-right">
-                    <div class="s-dot"></div>
-                    <div class="s-card">
-                        <div class="s-icon"><i class="fab fa-react"></i></div>
-                        <h3>Frontend</h3>
-                        <div class="s-pills">
-                            <span class="s-pill">React</span>
-                            <span class="s-pill">Next.js</span>
-                            <span class="s-pill">TypeScript</span>
-                            <span class="s-pill">HTML5</span>
-                            <span class="s-pill">CSS3</span>
-                            <span class="s-pill">JavaScript</span>
-                        </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
                     </div>
+                    <h3>Frontend</h3>
+                    <p>HTML5, CSS3, JavaScript, Bootstrap</p>
                 </div>
-                <div class="s-item s-left">
-                    <div class="s-dot"></div>
-                    <div class="s-card">
-                        <div class="s-icon"><i class="fab fa-php"></i></div>
-                        <h3>Backend</h3>
-                        <div class="s-pills">
-                            <span class="s-pill">PHP</span>
-                            <span class="s-pill">MySQL</span>
-                            <span class="s-pill">Node.js</span>
-                            <span class="s-pill">Firebase</span>
-                            <span class="s-pill">REST APIs</span>
-                        </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-php"></i>
                     </div>
+                    <h3>Backend</h3>
+                    <p>PHP, MySQL, Node.js (basic), Firebase Functions, REST APIs</p>
                 </div>
-                <div class="s-item s-right">
-                    <div class="s-dot"></div>
-                    <div class="s-card">
-                        <div class="s-icon"><i class="fas fa-cloud"></i></div>
-                        <h3>Cloud & APIs</h3>
-                        <div class="s-pills">
-                            <span class="s-pill">Firebase</span>
-                            <span class="s-pill">Google Cloud</span>
-                            <span class="s-pill">Vercel</span>
-                            <span class="s-pill">Stripe</span>
-                            <span class="s-pill">Google APIs</span>
-                        </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
                     </div>
+                    <h3>Cloud & APIs</h3>
+                    <p>Firebase, Google Cloud, Stripe, Google API Services</p>
                 </div>
-                <div class="s-item s-left">
-                    <div class="s-dot"></div>
-                    <div class="s-card">
-                        <div class="s-icon"><i class="fas fa-robot"></i></div>
-                        <h3>AI Integration</h3>
-                        <div class="s-pills">
-                            <span class="s-pill">AI/ML APIs</span>
-                            <span class="s-pill">Data Processing</span>
-                            <span class="s-pill">Smart Features</span>
-                        </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-robot"></i>
                     </div>
+                    <h3>AI Integration</h3>
+                    <p>AI/ML APIs, Real-time Data Processing, Smart Features</p>
                 </div>
-                <div class="s-item s-right">
-                    <div class="s-dot"></div>
-                    <div class="s-card">
-                        <div class="s-icon"><i class="fas fa-tools"></i></div>
-                        <h3>Dev Tools</h3>
-                        <div class="s-pills">
-                            <span class="s-pill">Git</span>
-                            <span class="s-pill">VS Code</span>
-                            <span class="s-pill">Postman</span>
-                            <span class="s-pill">Firebase Console</span>
-                        </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
                     </div>
+                    <h3>Dev Tools</h3>
+                    <p>Git, GitLab, VS Code, Postman, Firebase Console</p>
                 </div>
             </div>
         </div>
@@ -223,28 +176,8 @@
                 <button class="tab-btn" data-filter="web">Web</button>
                 <button class="tab-btn" data-filter="app">App</button>
                 <button class="tab-btn" data-filter="ai">AI</button>
-                <button class="tab-btn" data-filter="ongoing">Ongoing</button>
             </div>
             <div class="projects-grid">
-                <div class="project-card" data-category="ongoing">
-                    <div class="project-image">
-                    <img loading="lazy" src="images/ongoing/ebooks.png" alt="eBookHub Marketplace"
-                            onerror="this.src='https://via.placeholder.com/600x400?text=eBooks.io'">
-                        <div class="project-overlay">
-                            <a href="https://ebook-io.vercel.app/" target="_blank" class="project-link"><i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>ebooks.io</h3>
-                        <p>Full-featured digital eBook marketplace built with Bootstrap 5, featuring catalog browsing, product details, cart management, and secure checkout.</p>
-                        <div class="project-tags">
-                        <span>HTML5</span>
-                        <span>Bootstrap 5</span>
-                        <span>E-Commerce</span>
-                        </div>
-                    </div>
-                </div>
                 <div class="project-card" data-category="ai">
                     <div class="project-image">
                         <img loading="lazy" src="images/ai/youtubetoviral.png" alt="ClipForge AI"
@@ -488,66 +421,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card" data-category="ongoing">
-                    <div class="project-image">
-                        <img loading="lazy" src="images/ongoing/jobhub.png" alt="JobHub"
-                            onerror="this.src='https://via.placeholder.com/600x400?text=JobHub'">
-                        <div class="project-overlay">
-                            <a href="https://jobhub-chi-five.vercel.app/" target="_blank" class="project-link"><i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>JobHub</h3>
-                        <p>JobHub is a local job community platform connecting job seekers with employers in their area. Find work. Hire locally.</p>
-                        <div class="project-tags">
-                            <span>React</span>
-                            <span>Nextjs</span>
-                            <span>Typescript</span>
-                            <span>Job Community</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="ongoing">
-                    <div class="project-image">
-                        <img loading="lazy" src="images/ongoing/webecommerce.png" alt="WebStore"
-                            onerror="this.src='https://via.placeholder.com/600x400?text=WebStore'">
-                        <div class="project-overlay">
-                            <a href="https://webecommerce-one.vercel.app/" target="_blank" class="project-link"><i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>WebStore</h3>
-                        <p>Ongoing Personal project contains Responsive website templates built for speed, SEO, and stunning design Templates.</p>
-                        <div class="project-tags">
-                            <span>Typescript</span>
-                            <span>Next.js</span>
-                            <span>Javascript</span>
-                            <span>E-Commerce</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="ongoing">
-                    <div class="project-image">
-                        <img loading="lazy" src="images/ongoing/pip.png" alt="PIP: Smart AI Companion"
-                            onerror="this.src='https://via.placeholder.com/600x400?text=Smart+AI+Companion'">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link" data-type="private"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>PIP: Smart AI Companion</h3>
-                        <p>Personal AI Companion Called "PIP" Unleashed Multiple Skins as a application designed to be an AI Companion Chat APP. This Model Was 3D Generated Using Google Flow Image Generated.</p>
-                        <div class="project-tags">
-                            <span>Flutter</span>
-                            <span>3D</span>
-                            <span>Kotlin</span>
-                            <span>AI Companion</span>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
         </div>
     </section>
