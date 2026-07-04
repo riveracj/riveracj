@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- Calendly link widget begin -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Calendly link widget end -->
 </head>
 
 <body>
@@ -69,7 +73,7 @@
                 <p class="hero-subtitle animate-fade-in-delay"><span id="typed-text"></span><span class="typed-cursor">|</span></p>
                 <div class="hero-buttons animate-fade-in-delay-2">
                     <a href="#projects" class="btn-hero btn-hero-primary">View My Work</a>
-                    <a href="#contact" class="btn-hero btn-hero-secondary">Get In Touch</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/riveracjjanjan6/30min'});return false;" class="btn-hero btn-hero-secondary">Book a Free 15-min Security Review</a>
                 </div>
                 <div class="social-links animate-fade-in-delay-3">
                     <a href="https://github.com/riveracj" target="_blank"><i class="fab fa-github"></i></a>
@@ -78,8 +82,6 @@
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
         </div>
     </section>
 
@@ -88,32 +90,25 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <div class="about-image">
-                    <img loading="lazy" src="images/profile.png" alt="Profile Picture"
-                        onerror="this.src='https://via.placeholder.com/400x400?text=Your+Photo'">
+                <div class="about-left">
+                    <div class="about-image">
+                        <img loading="lazy" src="images/profile.png" alt="Profile Picture"
+                            onerror="this.src='https://via.placeholder.com/400x400?text=Your+Photo'">
+                    </div>
                 </div>
                 <div class="about-text">
-                    <h3>Freelance Full-Stack Developer</h3>
                    <p>
                     I'm a <strong>Freelance Full-Stack Developer</strong> specializing in <strong>cross-platform application development with Flutter</strong>, delivering seamless, high-performance experiences across <strong>iOS, Android, Web, and Desktop</strong>. I design and scale modern applications while integrating <strong>Firebase, Stripe, Google APIs,</strong> and <strong>AI-powered services</strong>.
                     </p>
                     <p>
                         I am passionate about writing <strong>clean, maintainable code</strong> and creating applications that combine <strong>technical performance</strong> with an <strong>excellent user experience</strong>. Whether building a new system from the ground up or enhancing an existing one, I can help bring your project to life — from <strong>concept to deployment</strong>.
                     </p>
-
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h4>Flutter</h4>
-                            <p>Specialist</p>
-                        </div>
-                        <div class="stat">
-                            <h4>Full-Stack</h4>
-                            <p>Developer</p>
-                        </div>
-                        <div class="stat">
-                            <h4>AI/ML</h4>
-                            <p>Integration</p>
-                        </div>
+                    <div class="about-tags">
+                        <span>Secure Fullstack</span>
+                        <span class="sep">|</span>
+                        <span>OWASP</span>
+                        <span class="sep">|</span>
+                        <span>Healthcare IT</span>
                     </div>
                     <a href="files/Chrisvie John Rivera CV Resume.pdf" class="btn btn-primary" download>Download Resume</a>
                 </div>
@@ -133,7 +128,7 @@
                     <div class="s-dot"></div>
                     <div class="s-card">
                         <div class="s-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <h3>Mobile Development</h3>
+                        <h3>Mobile&Web Development</h3>
                         <div class="s-pills">
                             <span class="s-pill">Flutter</span>
                             <span class="s-pill">iOS</span>
@@ -153,6 +148,7 @@
                             <span class="s-pill">TypeScript</span>
                             <span class="s-pill">HTML5</span>
                             <span class="s-pill">CSS3</span>
+                            <span class="s-pill">Bootstrap5</span>
                             <span class="s-pill">JavaScript</span>
                         </div>
                     </div>
@@ -182,6 +178,7 @@
                             <span class="s-pill">Vercel</span>
                             <span class="s-pill">Stripe</span>
                             <span class="s-pill">Google APIs</span>
+                            <span class="s-pill">OpenAI APIs</span>
                         </div>
                     </div>
                 </div>
@@ -226,6 +223,25 @@
                 <button class="tab-btn" data-filter="ongoing">Ongoing</button>
             </div>
             <div class="projects-grid">
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                    <img loading="lazy" src="images/web/viralblueprint.png" alt="eBook Site"
+                            onerror="this.src='https://via.placeholder.com/600x400?text=eBooksSite'">
+                        <div class="project-overlay">
+                            <a href="https://theviralblueprint-ebook.vercel.app/" target="_blank" class="project-link"><i
+                                    class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>The Viral BluePrint</h3>
+                        <p>The Viral BluePrint built with Bootstrap 5, featuring Single Page Offer PDF Book Selling, product details, and secure checkout.</p>
+                        <div class="project-tags">
+                        <span>HTML5</span>
+                        <span>Bootstrap 5</span>
+                        <span>EBook</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card" data-category="ongoing">
                     <div class="project-image">
                     <img loading="lazy" src="images/ongoing/ebooks.png" alt="eBookHub Marketplace"
@@ -358,7 +374,7 @@
                         <img loading="lazy" src="images/web/2go-logistics.png" alt="2GO Logistics"
                             onerror="this.src='https://via.placeholder.com/600x400?text=2GO+Logistics'">
                         <div class="project-overlay">
-                            <a href="https://2go-marbel.cloudhost.host/" target="_blank" class="project-link"><i
+                            <a href="#" class="project-link" data-type="private"><i
                                     class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
@@ -377,7 +393,7 @@
                         <img loading="lazy" src="images/web/pjtravelntours.png" alt="PJ Travelntour"
                             onerror="this.src='https://via.placeholder.com/600x400?text=PJ+Travelntour'">
                         <div class="project-overlay">
-                            <a href="https://pjtravelandtours.cloudhost.host/" target="_blank" class="project-link"><i
+                            <a href="#" class="project-link" data-type="private"><i
                                     class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
@@ -396,7 +412,7 @@
                         <img loading="lazy" src="images/web/donaterecoletos.png" alt="Donate Recoletos"
                             onerror="this.src='https://via.placeholder.com/600x400?text=Donate+Recoletos'">
                         <div class="project-overlay">
-                            <a href="https://donaterecoletos.com/" target="_blank" class="project-link"><i
+                            <a href="#" class="project-link" data-type="private"><i
                                     class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
@@ -415,7 +431,7 @@
                         <img loading="lazy" src="images/web/wearhause.png" alt="Wearhaus E-Commerce"
                             onerror="this.src='https://via.placeholder.com/600x400?text=Wearhaus+Ecommerce'">
                         <div class="project-overlay">
-                            <a href="https://wearhaus.cloudhost.host/" target="_blank" class="project-link"><i
+                            <a href="#" class="project-link" data-type="private"><i
                                     class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
@@ -434,8 +450,8 @@
                         <img loading="lazy" src="images/web/wresletech.png" alt="WrestleTech Philippines"
                             onerror="this.src='https://via.placeholder.com/600x400?text=WrestleTech'">
                         <div class="project-overlay">
-                            <a href="https://wrestletech.cloudhost.host/wrestletech-ph/" target="_blank"
-                                class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            <a href="#" class="project-link" data-type="private"><i
+                                    class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                     <div class="project-info">
@@ -549,6 +565,9 @@
                 </div>
                 
             </div>
+            <div class="view-more-wrap">
+                <button class="view-more-btn" id="viewMoreBtn">VIEW MORE <i class="fas fa-chevron-down"></i></button>
+            </div>
         </div>
     </section>
 
@@ -560,6 +579,8 @@
                 <div class="contact-info">
                     <h3>Let's work together!</h3>
                     <p>I'm always interested in hearing about new projects and opportunities.</p>
+                </div>
+                <div class="contact-details-wrap">
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -584,6 +605,7 @@
                         </div>
                     </div>
                 </div>
+                <!--
                 <form class="contact-form" id="contact-form" action="api/contact.php" method="POST">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required>
@@ -599,6 +621,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
+                -->
             </div>
         </div>
     </section>
@@ -615,6 +638,7 @@
                 </div>
             </div>
             <!-- Visit Statistics -->
+            <!--
             <div class="visit-stats" id="visit-stats">
                 <div class="stats-grid">
                     <div class="stat-item">
@@ -647,16 +671,29 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
     </footer>
 
     <!-- Project Modal -->
     <div class="project-modal" id="projectModal">
         <div class="modal-content">
-            <div class="modal-icon">🔒</div>
-            <h3 class="modal-title">PRIVATE_REPOSITORY</h3>
-            <p class="modal-message">This source code is stored in a private repository and is not available for public viewing.</p>
-            <button class="modal-close" id="modalClose">UNDERSTOOD</button>
+            <button class="modal-close-btn" id="modalClose">&times;</button>
+            <div class="modal-grid">
+                <div class="modal-details">
+                    <span class="modal-badge" id="modalBadge">PRIVATE</span>
+                    <h3 class="modal-details-title" id="modalTitle">Project Title</h3>
+                    <p class="modal-description" id="modalDescription">Description</p>
+                    <div class="modal-tags" id="modalTags"></div>
+                    <div class="modal-footnote">
+                        <i class="fas fa-lock"></i>
+                        <span>Private repository — source code not publicly available</span>
+                    </div>
+                </div>
+                <div class="modal-image-col">
+                    <img id="modalImage" src="" alt="Project Image">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -665,13 +702,14 @@
         <i class="fas fa-arrow-up"></i>
     </button>
     <script>
+      /*
       const form = document.getElementById('contact-form');
         let isSubmitting = false;
 
         form.addEventListener('submit', function (event) {
             event.preventDefault();
 
-            if (isSubmitting) return; // 🚫 prevent duplicate submissions
+            if (isSubmitting) return;
             isSubmitting = true;
 
             const submitBtn = form.querySelector('button[type="submit"]');
@@ -738,13 +776,14 @@
                     }).showToast();
                 })
                 .finally(() => {
-                    // ✅ re-enable after request completes
                     isSubmitting = false;
                     submitBtn.disabled = false;
                     submitBtn.textContent = "Send Message";
                 });
         });
+        */
 
+        /*
         // Visit Tracking and Statistics
         (function() {
             // Log visit on page load
@@ -878,6 +917,7 @@
                 logVisit();
             }
         })();
+        */
     </script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="js/script.js"></script>

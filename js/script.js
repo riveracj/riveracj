@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameEl = document.getElementById('typed-name');
     const nameCursor = document.getElementById('nameCursor');
     const subtitleCursor = document.querySelector('.hero-subtitle .typed-cursor');
-    const subtitleText = "Full-Stack Developer | Flutter Developer | Web Developer";
+    const subtitleText = "Secure Fullstack & Flutter Developer | OWASP | Healthcare IT";
     const nameText = "Chrisvie John Rivera";
 
     nameCursor.style.opacity = '0';
@@ -214,37 +214,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // PROJECT MODAL (Private repo notification)
+    // PROJECT MODAL (Glass detail modal)
     // ==========================================
     const modal = document.getElementById('projectModal');
     const modalClose = document.getElementById('modalClose');
+    const modalBadge = document.getElementById('modalBadge');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalTags = document.getElementById('modalTags');
+    const modalImage = document.getElementById('modalImage');
 
     document.querySelectorAll('.project-link').forEach(link => {
         link.addEventListener('click', function(e) {
             if (this.dataset.type === 'private') {
                 e.preventDefault();
+                const card = this.closest('.project-card');
+                if (card) {
+                    modalBadge.textContent = 'PRIVATE';
+                    modalTitle.textContent = card.querySelector('.project-info h3')?.textContent || 'Project';
+                    modalDescription.textContent = card.querySelector('.project-info p')?.textContent || '';
+                    const tagSpans = card.querySelectorAll('.project-tags span');
+                    modalTags.innerHTML = '';
+                    tagSpans.forEach(t => {
+                        const el = document.createElement('span');
+                        el.textContent = t.textContent;
+                        modalTags.appendChild(el);
+                    });
+                    const img = card.querySelector('.project-image img');
+                    modalImage.src = img?.src || '';
+                    modalImage.alt = card.querySelector('.project-info h3')?.textContent || 'Project';
+                }
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
+                cursor.style.display = 'none';
             }
         });
     });
 
-    modalClose.addEventListener('click', () => {
+    const closeModal = () => {
         modal.classList.remove('active');
         document.body.style.overflow = '';
-    });
+        cursor.style.display = '';
+    };
+
+    modalClose.addEventListener('click', closeModal);
 
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
+            closeModal();
         }
     });
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
+            closeModal();
         }
     });
 
@@ -270,6 +293,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     const tabBtns = document.querySelectorAll('.tab-btn');
     const projectCards = document.querySelectorAll('.project-card');
+    const viewMoreBtn = document.getElementById('viewMoreBtn');
+    const INITIAL_COUNT = 6;
+
+    function applyLimit(isAll) {
+        if (!viewMoreBtn) return;
+        if (isAll) {
+            const expanded = viewMoreBtn.classList.contains('active');
+            projectCards.forEach((card, i) => {
+                card.classList.toggle('limited', i >= INITIAL_COUNT && !expanded);
+            });
+            viewMoreBtn.style.display = projectCards.length > INITIAL_COUNT ? '' : 'none';
+        } else {
+            projectCards.forEach(card => card.classList.remove('limited'));
+            viewMoreBtn.style.display = 'none';
+        }
+    }
 
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -299,9 +338,25 @@ document.addEventListener('DOMContentLoaded', () => {
                         delay += 0.08;
                     }
                 });
+                applyLimit(filter === 'all');
             });
         });
     });
+
+    // ==========================================
+    // VIEW MORE (Limit projects to 6)
+    // ==========================================
+    if (viewMoreBtn) {
+        applyLimit(true);
+        viewMoreBtn.addEventListener('click', () => {
+            viewMoreBtn.classList.toggle('active');
+            const isExpanded = viewMoreBtn.classList.contains('active');
+            viewMoreBtn.innerHTML = isExpanded
+                ? 'VIEW LESS <i class="fas fa-chevron-up"></i>'
+                : 'VIEW MORE <i class="fas fa-chevron-down"></i>';
+            applyLimit(true);
+        });
+    }
 
     // ==========================================
     // SMOOTH SCROLL
