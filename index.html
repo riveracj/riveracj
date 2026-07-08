@@ -101,16 +101,19 @@
                     I'm a <strong>Freelance Full-Stack Developer</strong> specializing in <strong>cross-platform application development with Flutter</strong>, delivering seamless, high-performance experiences across <strong>iOS, Android, Web, and Desktop</strong>. I design and scale modern applications while integrating <strong>Firebase, Stripe, Google APIs,</strong> and <strong>AI-powered services</strong>.
                     </p>
                     <p>
-                        I am passionate about writing <strong>clean, maintainable code</strong> and creating applications that combine <strong>technical performance</strong> with an <strong>excellent user experience</strong>. Whether building a new system from the ground up or enhancing an existing one, I can help bring your project to life — from <strong>concept to deployment</strong>.
+                        I am passionate about writing <strong>clean, maintainable code</strong> and creating applications that combine <strong>technical performance</strong> with an <strong>excellent user experience</strong>Committed a <strong>quality-first approach</strong>, I implement thorough testing and debugging practices to ensure stability, optimal performance, and cross-platform consistency Whether building a new system from the ground up or enhancing an existing one, I can help bring your project to life — from <strong>concept to deployment</strong>.
                     </p>
                     <div class="about-tags">
-                        <span>Secure Fullstack</span>
+                        <span>Fullstack</span>
+                        <span class="sep">|</span>
+                        <span>Quality Assurance</span>
                         <span class="sep">|</span>
                         <span>OWASP</span>
                         <span class="sep">|</span>
                         <span>Healthcare IT</span>
                     </div>
                     <a href="files/Chrisvie John Rivera CV Resume.pdf" class="btn btn-primary" download>Download Resume</a>
+                    <!-- <a href="#" class="btn btn-secondary" id="achievementsBtn">Achievements</a> -->
                 </div>
             </div>
         </div>
@@ -242,6 +245,42 @@
                         </div>
                     </div>
                 </div>
+                <div class="project-card" data-category="app">
+                    <div class="project-image">
+                        <img loading="lazy" src="images/app/transly.png" alt="Transly"
+                            onerror="this.src='https://via.placeholder.com/600x400?text=Transly'">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" data-type="private"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Transly</h3>
+                        <p>A cross-platform mobile app for seamless translation and communication. Translate text in different languages instantly.</p>
+                        <div class="project-tags">
+                            <span>Flutter</span>
+                            <span>Translation</span>
+                            <span>Text to Speech</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="app">
+                    <div class="project-image">
+                        <img loading="lazy" src="images/app/cartoon_dev.png" alt="Cartoon Dev"
+                            onerror="this.src='https://via.placeholder.com/600x400?text=Cartoon+Dev'">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link" data-type="private"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Cartoon Dev</h3>
+                        <p>Transform your images into art with AI-powered image transformation. Upload, customize, and download in seconds.</p>
+                        <div class="project-tags">
+                            <span>Flutter</span>
+                            <span>OpenAI</span>
+                            <span>Image to Image</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-card" data-category="ongoing">
                     <div class="project-image">
                     <img loading="lazy" src="images/ongoing/ebooks.png" alt="eBookHub Marketplace"
@@ -294,24 +333,6 @@
                             <span>Python</span>
                             <span>Gemini AI</span>
                             <span>Subtitles</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-category="app">
-                    <div class="project-image">
-                        <img loading="lazy" src="images/app/cartoon_dev.png" alt="Cartoon Dev"
-                            onerror="this.src='https://via.placeholder.com/600x400?text=Cartoon+Dev'">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link" data-type="private"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Cartoon Dev</h3>
-                        <p>Transform your images into art with AI-powered image transformation. Upload, customize, and download in seconds.</p>
-                        <div class="project-tags">
-                            <span>Flutter</span>
-                            <span>AI</span>
-                            <span>Image Processing</span>
                         </div>
                     </div>
                 </div>
@@ -674,6 +695,70 @@
             -->
         </div>
     </footer>
+
+    <!-- Achievements Modal -->
+    <div class="achievements-modal" id="achievementsModal">
+        <div class="achievements-modal-content">
+            <button class="modal-close-btn" id="achievementsClose">&times;</button>
+            <h2 class="achievements-modal-title">Achievements & Certifications</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-img" data-img="images/achievements/top-rated.png">
+                        <img src="images/achievements/top-rated.png" alt="Top Rated Freelancer" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="achievement-icon" style="display:none"><i class="fas fa-trophy"></i></div>
+                    </div>
+                    <h4>Top Rated Freelancer</h4>
+                    <p>Maintaining a top rating across multiple freelance platforms for consistent quality delivery.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-img" data-img="images/achievements/flutter-cert.png">
+                        <img src="images/achievements/flutter-cert.png" alt="Flutter Certified" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="achievement-icon" style="display:none"><i class="fas fa-certificate"></i></div>
+                    </div>
+                    <h4>Flutter Certified</h4>
+                    <p>Professional certification in cross-platform development with Flutter & Dart.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-img" data-img="images/achievements/owasp.png">
+                        <img src="images/achievements/owasp.png" alt="OWASP Security" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="achievement-icon" style="display:none"><i class="fas fa-shield-alt"></i></div>
+                    </div>
+                    <h4>OWASP Security</h4>
+                    <p>Certified in web application security following OWASP best practices.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-img" data-img="images/achievements/cloud-arch.png">
+                        <img src="images/achievements/cloud-arch.png" alt="Cloud Architecture" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="achievement-icon" style="display:none"><i class="fas fa-cloud"></i></div>
+                    </div>
+                    <h4>Cloud Architecture</h4>
+                    <p>Expertise in Firebase, AWS, and cloud-native application architecture.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-img" data-img="images/achievements/healthcare-it.png">
+                        <img src="images/achievements/healthcare-it.png" alt="Healthcare IT Specialist" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="achievement-icon" style="display:none"><i class="fas fa-award"></i></div>
+                    </div>
+                    <h4>Healthcare IT Specialist</h4>
+                    <p>Certified in healthcare information systems and compliant application development.</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-img" data-img="images/achievements/50-projects.png">
+                        <img src="images/achievements/50-projects.png" alt="50+ Projects Delivered" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="achievement-icon" style="display:none"><i class="fas fa-code"></i></div>
+                    </div>
+                    <h4>50+ Projects Delivered</h4>
+                    <p>Successfully delivered and deployed over 50 projects across web and mobile platforms.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Lightbox -->
+    <div class="image-lightbox" id="imageLightbox">
+        <button class="modal-close-btn" id="lightboxClose">&times;</button>
+        <img id="lightboxImage" src="" alt="Full view">
+    </div>
 
     <!-- Project Modal -->
     <div class="project-modal" id="projectModal">

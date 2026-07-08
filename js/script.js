@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameEl = document.getElementById('typed-name');
     const nameCursor = document.getElementById('nameCursor');
     const subtitleCursor = document.querySelector('.hero-subtitle .typed-cursor');
-    const subtitleText = "Secure Fullstack & Flutter Developer | OWASP | Healthcare IT";
+    const subtitleText = "Fullstack & Flutter Developer | Quality Assurance | OWASP | Ex-Healthcare IT";
     const nameText = "Chrisvie John Rivera";
 
     nameCursor.style.opacity = '0';
@@ -211,6 +211,79 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transform = 'translateY(30px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         revealObserver.observe(el);
+    });
+
+    // ==========================================
+    // ACHIEVEMENTS MODAL
+    // ==========================================
+    const achievementsModal = document.getElementById('achievementsModal');
+    const achievementsBtn = document.getElementById('achievementsBtn');
+    const achievementsClose = document.getElementById('achievementsClose');
+
+    if (achievementsBtn && achievementsModal) {
+        achievementsBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            achievementsModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            if (typeof cursor !== 'undefined') cursor.style.display = 'none';
+        });
+    }
+
+    const closeAchievements = () => {
+        if (achievementsModal) {
+            achievementsModal.classList.remove('active');
+            document.body.style.overflow = '';
+            if (typeof cursor !== 'undefined') cursor.style.display = '';
+        }
+    };
+
+    if (achievementsClose) achievementsClose.addEventListener('click', closeAchievements);
+
+    if (achievementsModal) {
+        achievementsModal.addEventListener('click', (e) => {
+            if (e.target === achievementsModal) closeAchievements();
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && achievementsModal && achievementsModal.classList.contains('active')) {
+            closeAchievements();
+        }
+    });
+
+    // ==========================================
+    // IMAGE LIGHTBOX
+    // ==========================================
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImg = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.achievement-img').forEach(wrapper => {
+        wrapper.addEventListener('click', function() {
+            const img = this.querySelector('img');
+            if (img && img.style.display !== 'none') {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                if (typeof cursor !== 'undefined') cursor.style.display = 'none';
+            }
+        });
+    });
+
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        if (typeof cursor !== 'undefined') cursor.style.display = '';
+    };
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightbox) lightbox.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
     });
 
     // ==========================================

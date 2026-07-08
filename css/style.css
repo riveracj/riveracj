@@ -631,6 +631,10 @@ section {
     margin-top: 20px;
 }
 
+.about-text .btn + .btn {
+    margin-left: 12px;
+}
+
 .about-text p {
     margin-bottom: 20px;
     color: var(--text-light);
@@ -1507,6 +1511,200 @@ section {
     .modal-details-title {
         font-size: 1.25rem;
     }
+}
+
+/* ==========================================
+   ACHIEVEMENTS MODAL
+   ========================================== */
+.achievements-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    padding: 20px;
+}
+
+.achievements-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.achievements-modal-content {
+    max-width: 900px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    border-radius: 16px;
+    background: var(--bg-primary);
+    padding: 48px 40px 40px;
+    transform: scale(0.92) translateY(24px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.achievements-modal.active .achievements-modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.achievements-modal-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.achievement-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+}
+
+.achievement-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.achievement-img {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.achievement-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover .achievement-img img {
+    transform: scale(1.05);
+}
+
+.achievement-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 16px 20px 8px;
+    color: var(--text-primary);
+}
+
+.achievement-card p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin: 0 20px 20px;
+}
+
+.achievement-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(26, 115, 232, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .achievements-modal-content {
+        padding: 36px 20px 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   IMAGE LIGHTBOX
+   ========================================== */
+.image-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    padding: 40px;
+    cursor: zoom-out;
+}
+
+.image-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.image-lightbox.active img {
+    transform: scale(1);
+}
+
+.image-lightbox .modal-close-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 1.6rem;
+    width: 40px;
+    height: 40px;
+}
+
+.image-lightbox .modal-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.achievement-img {
+    cursor: pointer;
 }
 
 /* ==========================================
